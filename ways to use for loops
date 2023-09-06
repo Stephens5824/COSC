@@ -1,0 +1,10 @@
+for n in range(0,len(l)):
+  l[n] = str(255-int(l[n]))
+
+count = 0
+for x in l:
+  l[count]=str(255-int(x))
+  count+=1
+
+for count,item in enumerate(l):
+  l[count] = str(255-int(item))
