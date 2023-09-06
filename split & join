@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+email = str(input('Please enter your email > '))
+mail = '.'.join(email.split('@'))
+print(mail.split('.'))
