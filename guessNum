@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import random
+myRange = [0,100]
+def guess_number(n):
+  while True:
+    guess = int(input('Guess a number > '))
+      if guess == n: print('WIN');break
+         elif guess < n: print('Too low...')
+         else: print('Too high...')
+guess_number(random.randint(*myRange))
