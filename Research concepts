@@ -1,0 +1,31 @@
+** How to sort a string a-z **
+>>>  ''.join(sorted(<strid>))
+# used to alphabetically sort a string and join it
+
+** How to remove duplicates from a string **
+>>> <???>
+# pass
+
+** Dictionaries **
+>>>  for item in book :
+>>>       print('{} = {}'.format(item, book[item]))
+# formating multiple values from a dictionary
+
+** Encoding and Decoding **
+>>> st = "hello world"
+>>> ' '.join(format(ord(x), 'b') for x in st)
+'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 1110010 1101100 1100100'
+# example ig
+
+  3 def steg_encode_char(char, cover):
+  4     charbin = format(ord(char),'0>8b')
+  5     for i in range(0,len(cover)) :
+  6         coverbinl = list(format(int(cover[i]),'0>8b'))
+  7         coverbinl[-1] = charbin[i]
+  8         cover[i] = str(int(''.join(coverbinl),base=2))
+  9     pass
+ 10     
+ 10 def steg_decode_char(stego):
+ 12     msgbits = []
+ 13     for x in stego: msgbits.append(bin(int(x))[-1])
+ 14     return(chr(int(''.join(msgbits),base=2)))
