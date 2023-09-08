@@ -1,0 +1,37 @@
+total = []
+for key in catalog:
+    for item in order:
+        if item[0] == key:
+            total.append(catalog[key] * item[1]
+return sum(total)
+
+
+return sum(catalog[product] * quantity for product,quantity in order
+
+https://www.codewars.com/kata/54b724efac3d5402db00065e/train/python
+from preloaded import MORSE_CODE
+
+def decode_morse(morse_code):
+    count = 0
+    msg = morse_code.split(' ')
+    newLen = int(len(msg))
+    for x in range(0,len(msg)):
+        msg[x] = MORSE_CODE.get(str(msg[x]))
+        if msg[x] == None :msg[x] = ' '
+    while True: # removes leading spaces
+        if msg[count] != ' ':break
+        if msg[count] == ' ':msg.remove(msg[count])
+    
+    while True: # attempts to remove excessive spaces
+        if len(msg) <= 2:
+            if len(msg) == 2:
+                if msg[1] == ' ': msg.remove(msg[1])
+                else:break
+        if count+1 > len(msg):break
+        elif msg[count] == ' ' and msg[count+1] == ' ':
+            msg.remove(msg[count])
+            count -= 1
+        else: count += 1
+    
+    msg = ''.join(msg)
+    return msg
