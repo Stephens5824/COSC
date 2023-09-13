@@ -1,0 +1,38 @@
+***    Handbook : https://cted.cybbh.io/tech-college/pns/public/pns/latest/guides/bash_sg.html    ***
+***    10.50.38.131 ***
+***    TYST-M-507 ^^^^
+
+# Shortcuts
+>> Ctrl A    # brings cursor to the front of the line
+>> Ctrl E    # brings cursor to the end of the line
+>> Ctrl U    # deletes the whole line
+>> Ctrl R    # searches for past commands instead of spamming up arrow
+>> Ctrl L    # Clear screen
+
+# Man Pages
+>> Shift G # brings you to the last line
+>> G       # brings you to the first line
+>> /       # searches the page
+>>> n      # next instance down of search
+>>> Shift  # next instance up of search
+
+#
+find / -type d -iname log -exec ls -l {} \; 2>/dev/null
+find /var/log -iname *.log 2>/dev/null -printf "%i %f\n" | more
+find /var/log -iname *.log 2>/dev/null
+
+# 
+grep -n
+grep -C 3
+grep -v
+grep -A3 or -B3
+egrep -o "/home.*"    # can use regex and only shows the match
+
+#
+mkdir $HOME/{1123..1156..11}
+touch {1..5}.txt {6..9}~.txt $HOME/1123
+find $HOME/1123/*.txt
+find $HOME/1123/*.txt | egrep -v '~'
+find $HOME/1123 -iname "*.txt" ! -iname '*~.txt' -exec cp {} $HOME/CUT \;
+ls -l $HOME/CUT | cut -d' ' -f9 | cut -d$'\n' -f2-6 > $HOME/CUT/names
+ls -l $HOME/CUT | cut -d. -f1- -s | cut -d: -f2 | cut -d' ' -f2 > $HOME/CUT/names
