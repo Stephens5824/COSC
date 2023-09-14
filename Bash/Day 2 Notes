@@ -3,3 +3,10 @@
 awk -F<delimeter> 'BEGIN {OFS=<output delemeter>}(<condition>){print <output>}'
 
 echo "~~"{}{} | sed 's/ /\n/g' | while read line; do echo "" ; done
+
+dmesg | egrep "BIOS|CPU" | egrep -vi "reserved|usable" | cut -d] -f2
+dmesg | grep "BIOS\|CPU" | grep -v -i "reserved\|usable" | cut -d] -f2
+
+temp=$(openssl passwd -1 -salt bad4u Password1234)
+awk -F: -v "newpass=$temp" 'BEGIN {OFS=":"} {$3=newpass} {print $0}' $HOME/testk
+http://10.50.38.131/scoreboard
