@@ -1,0 +1,5 @@
+*** mkdir -p {source,build,man,help{/pages,/yelp,/images}}
+
+awk -F<delimeter> 'BEGIN {OFS=<output delemeter>}(<condition>){print <output>}'
+
+echo "~~"{}{} | sed 's/ /\n/g' | while read line; do echo "" ; done
