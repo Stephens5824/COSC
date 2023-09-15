@@ -1,1 +1,12 @@
+expr *** used for numerical expressions
+ex. c=$(expr $a - $b)	***	variables with command substitution
 
+### Functions ###
+func () {
+	commands
+}
+func()
+
+### Scope ###
+local var * avalable for the defined scope only
+var * avalable for global use
