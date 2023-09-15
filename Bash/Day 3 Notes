@@ -10,3 +10,6 @@ func()
 ### Scope ###
 local var * avalable for the defined scope only
 var * avalable for global use
+
+### Variable Substitution ###
+<> $1 $2 $3
