@@ -11,3 +11,8 @@ done
 for x in {0..10}; do
 	echo $x
 done
+
+which
+route OR ip route
+tar
+zip
