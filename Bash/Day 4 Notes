@@ -1,0 +1,13 @@
+\; excutes command on each item found
++  excutes command against everything all at once
+
+*** Looping ***
+x=0
+while [[ $x -le 10 ]] ; do
+	echo $x
+	x=$(($x+1))
+done
+
+for x in {0..10}; do
+	echo $x
+done
