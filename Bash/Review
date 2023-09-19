@@ -1,0 +1,21 @@
+cat /etc/passwd | cut -d: -f1
+cut -d: -f1 /etc/passwd
+sort -nr -k4
+grep -v -o -r -i -E
+find /home/student -name -iname -type f,d,p -mtime 1
+	-exec COMMAND -OPTIONS {} \; #execute against every object (*like a for loop)
+	-exec COMMAND -OPTIONS {} + #execute against everything all at once
+tar -c create
+	-v verbose
+	-f file
+	-z gzip
+wc -l
+delete	-	rm	-	rmdir
+touch
+	-d "2023-09-19 09:00:00" FILE
+	-t [[CC]YY]MMDDhhmm[.ss] FILE
+kill - pkill - kill -9 - killall
+if [[]]; then
+elif [[]]; then
+else
+fi
