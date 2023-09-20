@@ -38,6 +38,15 @@ $myarr = "$strt".."$nd"
 $revarr = "$nd".."$strt"
 
 #---- Arrays and Hash Tables
+$employee1 = @{First="Mary";Last="Hopper";ID="001";Job="Software Developer"}
+$employee2 = @{First="John";Last="Williams";ID="002";Job="Web Developer"}
+$employee1.Username = "mhopper001"
+$employee2.Username = "jWilliams002"
+$employee1.Job = "Software Lead"
+$employee3 = @{First="Alex";Last="Moran";ID="003";Job="Software Developer";Username="aMoran003"}
+$employee1.Status = "Management"
+$employee2.Status = "Intermediate"
+$employee3.Status = "Entry Level"
 
 #---- The pipeline
 
