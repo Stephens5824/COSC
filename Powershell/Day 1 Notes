@@ -26,3 +26,8 @@ remove-item alias:<>
 (Get-Process).ProcessName
 (Get-Process -name <>).Kill()
 Get-Process | Get-Member
+Get-Process | Format-Table name, id
+Get-Service | Format-List -AutoSize or -Wrap
+	### Write Output and Write Host
+write-host writes straight to screen
+write-host can be manipulated thru piping
