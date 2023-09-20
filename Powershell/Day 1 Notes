@@ -8,22 +8,22 @@ pressing f5 runs the whole script window
 pressing f8 runs a singluar line in the script window
 
 **** Commands ****
-	#snytax for awk in pshll -> gc <> | %{($_ -split "\s+")[<>]}
-  ### command recon
+#snytax for awk in pshll -> gc <> | %{($_ -split "\s+")[<>]}
+  	### command recon
 Get-Command <>
 Get-Verb <>
 Get-Command -Verb get
 Get-Command -Noun
-  ### help pages
+  	### help pages
 Get-Help <> -showwindow or -online
 Get-help about_*  # explains concepts
 update-Help
-  ### alias'
+  	### alias'
 User defined or <>
 Get-alias -definition <>
 set-alias <> <>
 remove-item alias:<>
-  ### Properties?
+	### Properties?
 (Get-Process).ProcessName
 (Get-Process -name <>).Kill()
 Get-Process | Get-Member
