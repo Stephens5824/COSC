@@ -32,6 +32,10 @@ $quo = $var1 / $var2
 "$var1 / $var2 = $sum"
 
 #---- Reverse Arrays
+$strt = Get-Random -Minimum -10 -Maximum 0
+$nd = Get-Random -Minimum 1 -Maximum 20
+$myarr = "$strt".."$nd"
+$revarr = "$nd".."$strt"
 
 #---- Arrays and Hash Tables
 
