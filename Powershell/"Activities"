@@ -1,0 +1,32 @@
+#---- Find Cmdlets
+Update-Help
+Get-Process
+get-help *process*
+Get-Service
+Write-Host
+Write-Output
+New-Variable
+Set-Variable
+Get-Variable
+Remove-Variable
+Get-Command or Get-Alias
+Read-Host
+
+#---- Running Cmdlets
+Get-Process
+Get-Process -name s*
+get-alias -name <>  #[gal -> get-alias | dir -> get-childitem | echo -> write-output | ? -> Where-object | % -> foreach-object | ft -> format-table]
+Show-NetFirewallRule
+set-alias gh Get-Help
+
+#---- Variables
+
+#---- Reverse Arrays
+
+#---- Arrays and Hash Tables
+
+#---- The pipeline
+
+#---- Custom Object
+
+#---- Comparision and Condition
