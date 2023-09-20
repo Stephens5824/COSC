@@ -1,2 +1,10 @@
 Powershell is a wrapper ...
-System.Management.Automation.dll
+System.Management.Automation.dll ...
+xfreerdp /u:student /v:x.x.x.x -dynamic- resolution +glyph-cache +clipboard
+https://vta.cybbh.space/horizon/project/instances/
+
+**** Commands ****
+Get-Command
+Get-Verb
+Get-Command -Verb get
+Get-Command -Noun
