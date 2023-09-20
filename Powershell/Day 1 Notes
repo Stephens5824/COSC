@@ -1,10 +1,28 @@
-Powershell is a wrapper ...
+
+Powershell is object-orientated ...
 System.Management.Automation.dll ...
 xfreerdp /u:student /v:x.x.x.x -dynamic- resolution +glyph-cache +clipboard
 https://vta.cybbh.space/horizon/project/instances/
 
+pressing f5 runs the whole script window
+pressing f8 runs a singluar line in the script window
+
 **** Commands ****
-Get-Command
-Get-Verb
+  ### command recon
+Get-Command <>
+Get-Verb <>
 Get-Command -Verb get
 Get-Command -Noun
+  ### help pages
+Get-Help <> -showwindow or -online
+Get-help about_*  # explains concepts
+update-Help
+  ### alias'
+User defined or <>
+Get-alias -definition <>
+set-alias <> <>
+remove-item alias:<>
+  ### Properties?
+(Get-Process).ProcessName
+(Get-Process -name <>).Kill()
+Get-Process | Get-Member
