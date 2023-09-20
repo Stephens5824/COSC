@@ -8,6 +8,7 @@ pressing f5 runs the whole script window
 pressing f8 runs a singluar line in the script window
 
 **** Commands ****
+	#snytax for awk in pshll -> gc <> | %{($_ -split "\s+")[<>]}
   ### command recon
 Get-Command <>
 Get-Verb <>
@@ -31,3 +32,18 @@ Get-Service | Format-List -AutoSize or -Wrap
 	### Write Output and Write Host
 write-host writes straight to screen
 write-host can be manipulated thru piping
+	### Variables
+$true & $false
+$_ #the current value in the pipe
+$x, $y, $z = "1", "2", "3"
+'' #takes input literally
+"" #allows variables to be used
+	### Arrays
+$arr is [array]	#tests if var is an array
+$arr = 1..4
+$arr[1..3] #returns range of array
+$arr[1,3] #returns specific index
+$jagarr = "joe", "jim", "jan", (1, ('apple', 'pear'), 3), "jay"
+$jagarr[3][1][0]
+
+$array = @() #multidimensionial array
