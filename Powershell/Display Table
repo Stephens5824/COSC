@@ -1,6 +1,6 @@
-$a= ,@(1,2,3);
-$a+=,@(4,5,6);
-foreach($i in $a){
+$MyList = @(("First","Last","ID","Job","Username","Status"),("Mary","Hopper","001","Software Lead","mhopper001","Management"),("John","Williams","002","Web Developer","jWilliams002","Intermediate"),("Alex","Moran","003","Software Developer","amoran003","Entry Level"))
+
+foreach($i in $MyList){
     $line = "";
     foreach($j in $i){
         $line += [string]::format("{0}`t", $j);
@@ -8,6 +8,7 @@ foreach($i in $a){
     $line;
 }
 
-^^^^ Need to reword ^^^^
-
-$MyList = @(("First","Last","ID","Job","Username","Status"),("Mary","Hopper","001","Software Lead","mhopper001","Management"),("John","Williams","002","Web Developer","jWilliams002","Intermediate"),("Alex","Moran","003","Software Developer","amoran003","Entry Level"))
+$Kys = @("First","Last","ID","Job","Username","Status")
+$emp1=@("Mary","Hopper","001","Software Lead","mhopper001","Management")
+$emp2=@("John","Williams","002","Web Developer","jWilliams002","Intermediate")
+$emp3=@("Alex","Moran","003","Software Developer","amoran003","Entry Level")
