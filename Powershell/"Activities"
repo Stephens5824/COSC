@@ -93,6 +93,6 @@ gc procs.txt | %{kill $_}
 del procs.txt
 
 $Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
-ps notepad | ft Id, name, starttime, pm
-ps msedge | ft Id, name, starttime, pm
-ps mspaint | ft Id, name, starttime, pm
+ps notepad | ft Id, name, starttime, TotalProcessorTime, NonpagedSystemMemorySize
+ps msedge | ft Id, name, starttime, TotalProcessorTime, NonpagedSystemMemorySize
+ps mspaint | ft Id, name, starttime, TotalProcessorTime, NonpagedSystemMemorySize
