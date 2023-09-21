@@ -51,6 +51,8 @@ $employee3.Status = "Entry Level"
 
 #---- The pipeline
 ps | Select name, StartTime | sort StartTime | select -first 1 -last 1
+(get-date).DayOfWeek)
+get-date | Select dayofweek
 get-hotfix | select name, installedon, HotfixID, description | sort Description | Format-Table Installedon, HotFixID, description
 
 #---- Custom Object
