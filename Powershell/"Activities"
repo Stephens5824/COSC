@@ -65,3 +65,34 @@ $Custm = [PSCustomObject]@{
 }
 
 #---- Comparision and Condition
+$line1 = "Do you have model number: MT5437 for john.doe@sharklasers.com?"
+$line2 = "What model number for john.doe@sharklasers.com?"
+if ($line1 -match "MT5437") {Write "Line1 : MT5437"}
+else {Write "No Model number found..."}
+if ($line2 -match "MT5437") {Write "Line2 : MT5437"}
+else {Write "No Model number found..."}
+
+#---- Looping and Iteration
+$Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
+ps notepad
+ps msedge
+ps mspaint
+ps notepad | select -ExpandProperty id | %{kill $_}
+ps msedge | select -ExpandProperty id | %{kill $_}
+ps mspaint | select -ExpandProperty id | %{kill $_}
+
+$Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
+ps notepad
+ps msedge
+ps mspaint
+touch procs.txt
+ps notepad | select -ExpandProperty id | ac procs.txt
+ps msedge | select -ExpandProperty id | ac procs.txt
+ps mspaint | select -ExpandProperty id | ac procs.txt
+gc procs.txt | %{kill $_}
+del procs.txt
+
+$Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
+ps notepad | ft Id, name, starttime, pm
+ps msedge | ft Id, name, starttime, pm
+ps mspaint | ft Id, name, starttime, pm
