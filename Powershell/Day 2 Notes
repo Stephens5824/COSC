@@ -1,1 +1,20 @@
+#----  Script Blocks
+  ex.
+$date = {(get-date).second}
+& $date
 
+$a=1
+$b={1+1}
+$a+=&$b
+
+$arr = 1, 2, 3, 4, 5
+$sum = 0 or $sum = @()
+$arr | %{$sum+=$_}
+$sum
+
+#---- idekam
+gc | ft -groupby extension
+ps | sort Status | ft -groupby status
+gc | groupni  extension | sort count -descending
+ps | group {$_.name.substring(0,1).Toupper()} | %{($_.name + " ") *7; "=========="; $_.Group}
+gc *.txt | where{$_.Length -gt 100}
