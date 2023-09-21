@@ -36,15 +36,15 @@ $quo = $var1 / $var2
 $strt = Get-Random -Minimum -10 -Maximum 0
 $nd = Get-Random -Minimum 1 -Maximum 20
 $myarr = "$strt".."$nd"
-$revarr = "$nd".."$strt"
+$revarr = "$nd".."$strt" or [myarr]::Reverse($myarr)
 
 #---- Arrays and Hash Tables
-$employee1 = @{First="Mary";Last="Hopper";ID="001";Job="Software Developer"}
-$employee2 = @{First="John";Last="Williams";ID="002";Job="Web Developer"}
+$employee1 = [ordered]@{First="Mary";Last="Hopper";ID="001";Job="Software Developer"}
+$employee2 = [ordered]@{First="John";Last="Williams";ID="002";Job="Web Developer"}
 $employee1.Username = "mhopper001"
 $employee2.Username = "jWilliams002"
 $employee1.Job = "Software Lead"
-$employee3 = @{First="Alex";Last="Moran";ID="003";Job="Software Developer";Username="aMoran003"}
+$employee3 = [ordered]@{First="Alex";Last="Moran";ID="003";Job="Software Developer";Username="aMoran003"}
 $employee1.Status = "Management"
 $employee2.Status = "Intermediate"
 $employee3.Status = "Entry Level"
