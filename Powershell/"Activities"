@@ -56,5 +56,12 @@ get-date | Select dayofweek
 get-hotfix | select name, installedon, HotfixID, description | sort Description | Format-Table Installedon, HotFixID, description
 
 #---- Custom Object
+$Custm = [PSCustomObject]@{
+    "ComputerName" = (Get-WmiObject Win32_ComputerSystem | Select Name).name
+    "OperatingSystemm" = "Microsoft Windows 10"
+    "Version" = (Get-WmiObject Win32_OperatingSystem | Select Version).version
+    "Manufacturer" = (Get-WmiObject Win32_ComputerSystem | Select Manufacturer).manufacturer
+    "Disks" = Get-WmiObject Win32_LogicalDisk
+}
 
 #---- Comparision and Condition
