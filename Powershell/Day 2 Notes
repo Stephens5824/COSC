@@ -18,3 +18,13 @@ ps | sort Status | ft -groupby status
 gc | groupni  extension | sort count -descending
 ps | group {$_.name.substring(0,1).Toupper()} | %{($_.name + " ") *7; "=========="; $_.Group}
 gc *.txt | where{$_.Length -gt 100}
+
+#---- Custom Objects
+$MyTruck = New-Object Object
+Add-Member -MemberType NoteProperty in $MyTruck -Name color -Value Red
+$MyTruck | Add-Member NoteProperty Cab SuperCrew
+
+$Soldier = [PSCustomObject]@{
+    "FN" = "Joe"
+    "LN" = "Biden"
+}
