@@ -30,6 +30,7 @@ $quo = $var1 / $var2
 "$var1 - $var2 = $sum"
 "$var1 * $var2 = $sum"
 "$var1 / $var2 = $sum"
+****  "{0} + {1} = {2}" -f 5, $var1, $sum
 
 #---- Reverse Arrays
 $strt = Get-Random -Minimum -10 -Maximum 0
