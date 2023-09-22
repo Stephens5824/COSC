@@ -97,3 +97,60 @@ del procs.txt
 ps notepad | ft Id, name, starttime, TotalProcessorTime, VirtualMemorySize, WorkingSet64
 ps msedge | ft Id, name, starttime, TotalProcessorTime, VirtualMemorySize, WorkingSet64
 ps mspaint | ft Id, name, starttime, TotalProcessorTime, VirtualMemorySize, WorkingSet64
+
+#---- Functions
+function Get-OrdinalDate(){$today = Get-Date; $Jan1 = Get-Date 1/1; $Ordinal = ($today - $Jan1).days +1; $year = (Get-Date).Year;Write "$year-$Ordinal"}
+function Get-SquareNum(){param([Parameter(Mandatory=$true)][Double]$n);return $n * $n}
+function Get-Product(){param([Parameter(Mandatory=$true)][Double]$1,[Parameter(Mandatory=$true)][Double]$2,[Parameter(Mandatory=$true)][Double]$3);
+return $1 * $2 * $3}
+function Pythagorean(){ param([Parameter(Mandatory=$true)][Double]$a,[Parameter(Mandatory=$true)][Double]$b)
+$c = [math]::Sqrt(($a*$a)+($b*$b)); return $c}
+function Angles(){
+    param([Parameter(Mandatory=$true)][Double]$a,[Parameter(Mandatory=$true)][Double]$b);$missing = (180 - $a) - $b;return $missing}
+function Weight(){ 
+    param(
+        [Parameter(Mandatory=$true)] $FN,
+        [Parameter(Mandatory=$true)] $LN,
+        [Parameter(Mandatory=$true)] $Age,
+        [Parameter(Mandatory=$true)] $lbs
+    )
+    $Kg = "{0:n0}" -f ($lbs/2.2) 
+    $tble = [ordered]@{First= $FN; Last= $LN; Age= $Age; Weight= $Kg;}
+    $tble
+}
+Function Get-Multisum(){
+    param(
+           [Parameter(Mandatory=$true)][Array]$arr,
+           [Parameter(Mandatory=$true)][Double]$int
+    )
+    BEGIN{}
+    PROCESS{
+        ForEach($item in $arr){
+            if($item -ne $int){$sum+=[int32]$item}
+        }
+    }
+    END{return $sum}
+}
+Function Get-LongestName(){
+    param(
+            [Parameter(Mandatory=$true)][String]$1,
+            [Parameter(Mandatory=$true)][String]$2,
+            [Parameter(Mandatory=$true)][String]$3
+        )
+    BEGIN { $lst = @(($1 + ": "+ ($1).Length),($2 + ": " + ($2).Length),($3 + ": " + ($3).Length)) }
+    PROCESS { $lst=$lst | sort -Descending { [int] ( $_ | Select-String -Pattern \d+ ).Matches[0].Value } }
+    END { return $lst }
+}
+function Get-NetInfo(){
+    $ip = (ipconfig | Select-String -Pattern "ipv4") -replace ".* "
+    $subnet = (ipconfig | Select-String -Pattern "subnet") -replace ".* "
+    $default = (ipconfig | Select-String -Pattern "default") -replace ".* "
+    "IP : $ip"
+    "Subnet : $subnet"
+    "Gateway : $default"
+}
+function Get-URLs($file){
+    $pattern = "[A-Za-z]+\.[A-Za-z]+\.[A-Za-z]+"
+    ForEach($line in (Get-Content dns.txt)){ if($line -match $pattern){ $matches[0] | Add-Content temp.txt}}
+    Get-Content temp.txt | sort | Group-Object | Select-Object -Property name,count
+}
