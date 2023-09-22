@@ -1,0 +1,17 @@
+#---- String Manipulation
+escape char is `
+
+$text = @"
+ajkldnfndasklndk
+dkafl;nslkdln;ldsa
+asdnjkndskna;vn
+as;dnvkdskc
+"@
+$text
+
+"{0:n3}" -f 123.45678
+"{0:n5}" -f 123
+"hello john" -replace "john", "world"
+'ser1,ser2,ser3' - replace ',', ';'
+-replace '\s+',' '
+-split '\.'
