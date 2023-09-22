@@ -67,10 +67,11 @@ $Custm = [PSCustomObject]@{
 #---- Comparision and Condition
 $line1 = "Do you have model number: MT5437 for john.doe@sharklasers.com?"
 $line2 = "What model number for john.doe@sharklasers.com?"
-if ($line1 -match "MT5437") {Write "Line1 : MT5437"}
-else {Write "No Model number found..."}
-if ($line2 -match "MT5437") {Write "Line2 : MT5437"}
-else {Write "No Model number found..."}
+$pattern = '[A-Za-z]{2}\d{2,5}'
+$line1,$line | %{
+    if ($_ -match $pattern) {Write $matches[0]": $_"}
+    else {Write "No Model number found..."}
+}
 
 #---- Looping and Iteration
 $Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
@@ -92,7 +93,7 @@ ps mspaint | select -ExpandProperty id | ac procs.txt
 gc procs.txt | %{kill $_}
 del procs.txt
 
-$Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
-ps notepad | ft Id, name, starttime, TotalProcessorTime, NonpagedSystemMemorySize
-ps msedge | ft Id, name, starttime, TotalProcessorTime, NonpagedSystemMemorySize
-ps mspaint | ft Id, name, starttime, TotalProcessorTime, NonpagedSystemMemorySize
+#$Pslst = @((notepad.exe), (microsoftedge), (mspaint)) | %{($_)}
+ps notepad | ft Id, name, starttime, TotalProcessorTime, VirtualMemorySize, WorkingSet64
+ps msedge | ft Id, name, starttime, TotalProcessorTime, VirtualMemorySize, WorkingSet64
+ps mspaint | ft Id, name, starttime, TotalProcessorTime, VirtualMemorySize, WorkingSet64
