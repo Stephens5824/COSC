@@ -219,7 +219,9 @@ function q9($addr) {
 	   otherwise return `$false. For the purpose of this function, regard
 	   addresses where all octets are in the range 0-255 inclusive to
 	   be valid.
-	#> $valid = '^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+	#> 
+	###	return [boo]($addr -as [IPAddress]
+       $valid = '^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
        if($addr -match $valid){return $true}
        else {return $false}
 }
