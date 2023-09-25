@@ -156,3 +156,12 @@ function Get-URLs($file){
     ForEach($line in (Get-Content dns.txt)){ if($line -match $pattern){ $matches[0] | Add-Content temp.txt}}
     Get-Content temp.txt | sort | Group-Object | Select-Object -Property name,count
 }
+
+#werid thing to learn about
+function q6 {
+    <# Return the sum of all elements provided on the pipeline
+	#> param([parameter(ValueFromPipeline=$true)][Single[]]$temp)
+       BEGIN{}
+       PROCESS{foreach($item in $temp){$sum += $item}}
+       END{return $sum}
+}
