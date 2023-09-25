@@ -157,11 +157,78 @@ function Get-URLs($file){
     Get-Content temp.txt | sort | Group-Object | Select-Object -Property name,count
 }
 
-#werid thing to learn about
+###############################################################################################################
+function q1($var1,$var2,$var3,$var4) {
+    <# Return the product of the arguments #>
+    return ($var1 * $var2 * $var3 * $var4)
+}
+function q2($arr,$rows,$cols,$key) {
+    <# Search the 2 dimensional array for the first occurance of key at column index 0
+       and return the value at column index 9 of the same row.
+       Return -1 if the key is not found.
+    #> 
+    foreach($item in $arr){
+        if($item[0] -eq $key){
+            return $item[9]
+        }
+    }
+    return -1
+}
+function q3 {
+    <# In a loop, prompt the user to enter positive integers one at time.
+       Stop when the user enters a -1. Return the maximum positive
+       value that was entered."
+	#> $highest = 0
+       do {
+       #Write "Enter positive intergers"
+       $temp = Read-Host
+       if($temp -gt $highest){$highest = $temp}
+       else{continue}
+       }while ($temp -gt 0)
+       return $highest
+}
+function q4($filename,$whichline) {
+    <# Return the line of text from the file given by the `$filename
+	   argument that corresponds to the line number given by `$whichline.
+	   The first line in the file corresponds to line number 0."
+	#> (Get-Content $filename)[$whichline]
+}
+function q5($path) {
+    <# Return the child items from the given path sorted
+       ascending by their Name
+	#> Get-ChildItem $path | sort
+}
 function q6 {
-    <# Return the sum of all elements provided on the pipeline
+    <# Return the sum of all elements provided on the pipeline #-------------------------------------? pipeline ? -----------------------
 	#> param([parameter(ValueFromPipeline=$true)][Single[]]$temp)
        BEGIN{}
        PROCESS{foreach($item in $temp){$sum += $item}}
        END{return $sum}
+}
+function q7 {
+	<# Return only those commands whose noun is process #>
+       Get-Command -Noun Process
+}
+function q8($adjective) {
+    <# Return the string 'PowerShell is ' followed by the adjective given
+	   by the `$adjective argument
+	#> return "PowerShell is $adjective"
+}
+function q9($addr) {
+	<# Return `$true when the given argument is a valid IPv4 address,
+	   otherwise return `$false. For the purpose of this function, regard
+	   addresses where all octets are in the range 0-255 inclusive to
+	   be valid.
+	#> $valid = '^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+       if($addr -match $valid){return $true}
+       else {return $false}
+}
+function q10 ($filepath,$lasthash) {
+    <# Return `$true if the contents of the file given in the
+       `$filepath argument have changed since `$lasthash was
+       computed. `$lasthash is the previously computed SHA256
+       hash (as a string) of the contents of the file. #>
+       $newhash = Get-FileHash $filepath
+       if($newhash -match $lasthash){return $false}
+       else {return $true}
 }
