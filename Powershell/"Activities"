@@ -1,5 +1,6 @@
 Invoke-WebRequest -Uri "10.50.34.170:8000/psexam.exe" -Outfile C:\Users\student\downloads\psexam.exe
 Invoke-WebRequest -Uri "10.50.34.170:8000/exam.ps1" -Outfile C:\Users\student\downloads\exam.ps1
+https://www.analyticsmarket.com/freetools/ipregex/
 #---- Find Cmdlets
 Update-Help
 Get-Process
