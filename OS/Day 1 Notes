@@ -1,1 +1,35 @@
+xfreerdp /u:tyler.e.stephens94 /v:10.50.41.100 /dynamic-resolution +glyph-cache +clipboard
+xfreerdp /u:tyler.e.stephens94 /v:10.50.47.158 /dynamic-resolution +glyph-cache +clipboard
+><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><>
+    <><><><> <><><><> <>< Stack Number ><><><>< 11 ><><><>< IPaddr ><><><>< 10.50.47.158 ><> <><><><> <><><><>
+><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><>
+                        <---## Commands That Were Brought Up in Class ##--->
+ps | get-member | where {$_.membertype -match "method"}
+(ps | select name, id, path | where {$_.
+
+                        <---## CIM Instances ##--->
+get-ciminstance -classname win32_logicaldisk #---> Lists logical disks on a host
+  <><> -drivetype ''
+  <><> -class win32_bios or get-wmiobject -class win32_bios
+
+                        <---## Execution Policy ##--->
+Get-ExecutionPolicy -list #---> Lists all scopes and execution policies on the system
+<><> Can be set to {AllSigned | Bypass | Default | RemoteSigned | Restricted | Undefined | Unrestricted}
+*Ex. > Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
+                        <---## Profiles ##--->
+<# Profiles store PwrShll configuration info. along w/ aliases & functions to allow persistance. #>
+*Ex > test-path -Path $profile.alluserallhosts
+*Ex > New-Item -ItemType file -Path $Profile -Force #---> Creates a profile
+*Ex > ise $profile
+
+                        <---## Remoting ##--->
+get-item WSMan:\localhost\Client\TrustedHosts
+set-item WSMan:\localhost\Client\TrustedHosts - value "file-server"
+set-item WSMan:\localhost\Client\TrustedHosts - value "domain-controll" -Concatenate
+invoke-command -computername file-server,domain-controll {get-service} -asjob
+Recieve-Job <#>
+><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><><=====><><><><>
+$sess=New-PSSession -computername file-server -credential student
+enter-pssession $sess ---> exit
 
