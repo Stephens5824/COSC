@@ -1,0 +1,35 @@
+sector
+partition
+volume
+diskpart
+HAL???
+Executive
+driver
+UEFI and BIOS
+Ntoskrnl.exe
+Bootmgr and Winload
+Bootmgr
+BCD
+tpm
+winload.exe
+Ntoskrnl.exe
+0x0
+smss
+Session 0
+secure boot
+hibernation
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
+Local Logon
+USERINIT.exe
+winlogon
+lsass
+last known good
+kerberos
+key distribution center
+login
+hybrid
+monolithic
+6.1
+10.0
+systeminfo |find "Version"
+8B7da4v6Y
