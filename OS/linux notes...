@@ -1,0 +1,4 @@
+lsblk
+sudo xxd -l 512 -g 1 /dev/vda
+sudo dd if=/dev/vda of=mbrcopy bs=512 count=1
+cat /boot/grub/grub.cfg
