@@ -1,4 +1,14 @@
+find . -type f -exec sh -c "dd if={} bs=512 count=1 | md5sum | sed s\|-\|{}\|" \; | sort -k 34
 lsblk
 sudo xxd -l 512 -g 1 /dev/vda
 sudo dd if=/dev/vda of=mbrcopy bs=512 count=1
 cat /boot/grub/grub.cfg
+
+8987eda205cb79e6b4024ae625db70f2
+d41d8cd98f00b204e9800998ecf8427e
+b73f30cf162511fe8429ff907a5a9f53
+44c9e8e62a142a91b06196073d11ea53
+a5eda
+d3711
+20ebe027c118ab822
+d0053711b7e48f75da1a864a57fd32cb
