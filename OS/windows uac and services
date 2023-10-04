@@ -1,0 +1,18 @@
+#UAC
+SigCheck
+asInvoker
+requireAdministrator
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System
+<><><><><><>
+<><><><><><>
+<><><><><><>
+<><><><><><>
+
+#windows services
+sc
+sc query state=all
+get-service
+HKLM\SYSTEM\CurrentControlSet\Services
+<<<>>>
+<<<>>>
+<<<>>>
