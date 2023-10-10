@@ -17,6 +17,8 @@ I'm trash bro
 This is the not the Flag. Keep looking, you are getting close.
 
 cat /lib/systemd/system/whatischaos.service
+/bin/bash -c 'netcat -lp 3389 < /tmp/NMAP_all_hosts.txt
+netcat -lp 3389 < /tmp/NMAP_all_hosts.txt,whatischaos.timer
 
 C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\5f7b5f1e01b83767.automaticDest...
