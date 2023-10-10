@@ -1,0 +1,9 @@
+Codex Seraphiniaus
+Monitoring
+Auditing
+\WinEvt\Logs\System.evtx
+security
+NT AUTHORITY\SYSTEM
+sacl
+HKLM\Security\Policy\PolAdtEv
+psloglist
