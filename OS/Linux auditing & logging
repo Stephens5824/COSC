@@ -27,3 +27,4 @@ Authentication  |  Application  |  System  |  Logging ata Glance - All logs are 
 
 *** XPATH : xpath -q -e '//port/@portid|//address/@addr' /home/garviel/output.xml | md5sum
 *** JQ : jq . /home/garviel/conn.log | md5sum
+*** JSON : jq . /home/garviel/conn.log | grep "id.orig.h" | sort | uniq | wc
