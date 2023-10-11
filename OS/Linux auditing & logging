@@ -34,3 +34,7 @@ frodo 189 00:00:03 - 01:15:02 = 1h,15m
 Balrog 190 09:35:52 - 10:26:41 = 51m
 Saruman 200 13:34:19 - 13:53:21 =  19m
 Saruman 201 13:58:22 - 16:43:21 = 2h,45m   
+
+
+
+{EVIL 4} <method>,/bin/apache3 -lp 443 < /dev/urandom
