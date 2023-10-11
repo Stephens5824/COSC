@@ -24,3 +24,5 @@ $(ls -l /var/log) ** shows the [ current | previous | older + zipped | age++ & z
 Authentication  |  Application  |  System  |  Logging ata Glance - All logs are in /var, most in /var/log.
                                                                   \_ Config File : /etc/rsyslog.conf
                                                                   \_ Service : /usr/sbin/rysylogd
+
+*** XPATH : xpath -q -e '//port/@portid|//address/@addr' /home/garviel/output.xml | md5sum
