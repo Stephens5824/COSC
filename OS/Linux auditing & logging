@@ -1,1 +1,26 @@
+<facility>.<severity>  /path/to/log/location
+ ^\         ^\          ^\_ where the log is stored and/or any action taken on the event before storage
+   |          \_ how urgent an event is from 0 to 7 *(Emergency to Debug)* \_____LEVEL_____ 
+    \_ the source, or event that generated the log \___CODE_________     \  0 : Emergency   \
+                                            \  0 : Kernel Messages   \     \  1 : Alert      \
+                     SysLog                  | 1 : User-lvl Messages   \     \  2 : Critical  \
+           rsyslog _/      \_ Syslog-ng      | 2 : Mail system           \     \  3 : Error    \
+                                             | 3 : System Daemons          \    | 4 : Warning   \
+*Default rules for syslog.                   | 4 : Security/authr. Messages |   | 5 : Notice     \__
+\_ cat /etc/rsyslog.d/50-default.conf        | 5 : Syslogd Messages         |   | 6 : Informational |
+         ** [severity uses the nouns !#]     | 6 : Line Printer subsystem   |    \ 7 : Debug  _____/
+<source>.!|<severity>  *!=lt+notInclude      \ 7 : Network news subsystem _/
+                                               \ 8:uucp,9:cron,10:authpriv,11:ftp,12:ntp,13:security,14:console,15:clock,16-23:local0-local7 )**
+Syslog files can be filtered with cat | vi | grep
+\_ Ex.
+   \_ grep timesyncd /var/log/syslog  ** looking for timesyncd
+   \_ grep -R "\w*\.\w*\.\w*" /var/log/syslog  ** loosely looks for an ip address
 
+$(cat /etc/logrotate.conf) ** allows you to read logrotate configuration
+** You can force rotations with $(sudo /usr/sbin/logrotate /etc/logrotate.conf)
+$(ls -l /var/log) ** shows the [ current | previous | older + zipped | age++ & zipped ] version of <> log
+** VIM and ZCAT will read zip files without extracting them.
+
+Authentication  |  Application  |  System  |  Logging ata Glance - All logs are in /var, most in /var/log.
+                                                                  \_ Config File : /etc/rsyslog.conf
+                                                                  \_ Service : /usr/sbin/rysylogd
