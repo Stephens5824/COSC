@@ -29,7 +29,8 @@ Authentication  |  Application  |  System  |  Logging ata Glance - All logs are 
 *** JQ : jq . /home/garviel/conn.log | md5sum
 *** JSON : jq . /home/garviel/conn.log | grep "id.orig.h" | sort | uniq | wc
 *** XML 5 : a96d39ddffe29c39fa94d46b96d3277d
-frodo 189 00:00:03 - 
-Balrog 190 09:35:52 -
-Saruman 200 13:34:19 - 1335
-Saruman 201 13:58:22 - 1646
+*** Whut 5 : 2h,0m,find /etc/passwd -exec /bin/sh \;,2
+frodo 189 00:00:03 - 01:15:02 = 1h,15m
+Balrog 190 09:35:52 - 10:26:41 = 51m
+Saruman 200 13:34:19 - 13:53:21 =  19m
+Saruman 201 13:58:22 - 16:43:21 = 2h,45m   
