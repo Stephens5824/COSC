@@ -11,3 +11,40 @@
 ><>< Linpmem | Winpmem | OSXpmem ><><                                   | Standlone        | No Install required    | Not all Profiles included      /
                                                                         |                  | Quick/easy to run      | Not updated frequently       /
                                                                         | ________________ | Can run w/o python ___ | __________________________ /
+
+NDIS
+netstat -r
+well known ports
+Ephemeral ports
+name resolution
+dns
+SID
+/user
+1000
+500
+name,sid
+sid
+backup
+faster
+descriptor
+dacl
+get-acl
+net localgroup
+icacls
+data execution prevention
+ASLR
+Shim
+Credential Guard
+Defender
+SEHOP
+Null
+WRP
+/scannow
+\WinSxS\Backup
+nslookup
+\System32\Drivers\etc\hosts
+dns
+nbtstat
+red
+blue
+incident response
