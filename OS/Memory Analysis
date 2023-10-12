@@ -1,0 +1,13 @@
+>< Volatile Memory ><>< Non-Persistant : ex. RAM                                                                                                           / Order of Volatility [Most2Least] \_________________________________
+>< Non-Volatile Memory ><>< Persistant : ex. HDD, USB                                                                                                      | 1 : CPU registers, cache                                           |
+<> Ex. of Memory Forensics <>                                                                                                                              | 2 : Routing table, ARP cache, Process Table, Kernel stats, memory  |
+\_ Bash history writese to ~/.bash_history once the session ends, but during the current session it resides in RAM and is viewd using the bash plugin.     | 3 : Temporary File Systems                                        /
+\_ Volatility reads deleted/modified logs & scraped from memory using < mfind, mcat, & mls >                                                               | 4 : Disk                                                        /
+                                                                         _____________________________________________________________________________     | 5 : Remote logging & monitoring data                          /
+><><>< Volatility Framework ><><><                                      | Version _________| Pros __________________| Cons __________________________ |    | 6 : Physical configuration, network topology                /
+### Volatility is an open source memory analysis tool.                  | Python           | Updated Frequently     | Lengthly Install                |    \ 7 : Archival media  ______________________________________/
+### It analyzes man file types including:-----+-->[raw dumps]           |                  | All Profiles available | Can't run w/o Python installed  |
+    [crash dumps]_/  \_[VMware dumps (.vmem)]  \_[virtual box dumps]    | --------------------------------------------------------------------------- |
+><>< Linpmem | Winpmem | OSXpmem ><><                                   | Standlone        | No Install required    | Not all Profiles included      /
+                                                                        |                  | Quick/easy to run      | Not updated frequently       /
+                                                                        | ________________ | Can run w/o python ___ | __________________________ /
