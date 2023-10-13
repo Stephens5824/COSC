@@ -1,0 +1,18 @@
+Windows :
+Ports : get-nettcpconnection, netstat -ano -anob, tcpview.exe
+  sus : patterns, 4444 , etc
+Processes: get-process, procmon.exe, tasklist, taskmanager
+  sus : nonstandard directories, misspelling in standard processes
+Persistance : 
+  powershell profiles, registry run keys, scheduled tasks
+Artifacts : 
+  bam, user assist, jump list, etc (windows auditing logging)
+Powershell Cmds :  
+    GCI, get-item, get-property, get-itemproperty
+
+Linux:
+Ports : netstat -ano, anop, ltup
+Processes : ps -elf, top ,htop
+Persistance: /etc/profile, bash profile, cron jobs
+cat /etc/shadow
+sudo if higher permissions needed
