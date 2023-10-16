@@ -1,4 +1,6 @@
 http://10.50.20.125:8000
+ssh -X 10.50.32.74
+xfreerdp 10.50.43.223
 C : \ U s e r s \ s t u d e n t \ D o c u m e n t s \ T r a p _ D u m p l i n g s . a a c
 C : \ U s e r s \ s t u d e n t \ D o c u m e n t s \ S k u l l s _ F o r _ T h e _ S k u l l T h r o n e . e x e
 C : \ U s e r s \ s t u d e n t \ D o c u m e n t s \ E v e r y t h i n g _ N i c e . t x t
