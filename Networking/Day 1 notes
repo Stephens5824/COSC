@@ -1,0 +1,43 @@
+Useful Links :
+https://miro.com/app/board/o9J_klSqCSY=/ <><> All the notes i probably wont take
+                                                                    (*-*) <[ yay... ]
+                         #### NOTES START HERE ####                  /|\
+                                                                     / \
+https://net.cybbh.io/-/public/-/jobs/851376/artifacts/modules/networking/slides/1-Network_Fundamentals.html <><> Slides used in lesson
+\_-> Bits and Bases are on slide 3
+| \_-> usfull charts for bits on .3 and binary conversion on .5
+| \_-> Chart for encapsulation and decapsulation on .6
+| \_-> Scary chart for the OSI Model on .7
+\_-> Data-Link layer on starts slide 5
+| \_-> Ethernet Header charts displayed on .3
+| | \_-> ??? 802.1Q ??? Header chart displayed on .4
+| \_-> Arp Header chart displayed on .5
+\_-> Network Layer on slide 6
+| \_-> IPv4 Header chart displayed on .2
+| \_-> IPv6 Header chart displayed on .4
+| \_-> *** ( mfu - header length ) / 8 = offset
+| \_-> Chart showing the difference v4 and v6 headers on .5
+| \_-> Fingerprinting on .6
+| \_-> ICMP header chart displayed on .7
+| \_-> ??? Zero Configuration ??? on .8   
+\_-> Transport Layer starts on slide 7  
+\_-> Session Layer starts on slide 8
+| \_-> Protocols are SOCKS, NetBios, PPTP/L2TP, RPC
+|   \_-> SOCKS (TCP 1080) on .3            _                
+|   \_-> PPTP (TCP 1723) + chart on .4    | <D               
+|   \_-> L2TP (TCP 1701) + chart on .5    U U                  
+|   \_-> SMB/CIFS (TCP 139/445 & UDP 137/138) on .6           
+|   \_-> RPC (ANY PORT) on .7
+\_-> Presentation Layer starts on slide 9     ()()
+\_-> Application Layer starts on slide 10     (**)  
+  \_-> FTP (TCP 20/21)                       o( O )
+  | \_-> Has 2 modes : Active (default) and Passive
+  |   \_-> Active                    
+  |   | \_-> Issues : Complications w/tunneling, NAT & Firewall traversal issues
+  |   | \_-> Chart displaying the connection on .3
+  |   \_-> Passive
+  |     \_-> Solves issues related to active mode & is often used in modern systems
+  |     \_-> Chart displaying connection on .5
+  \_-> SSH (TCP 22)
+  | \_-> Provides User & Client/server authentication, Data stream channeling
+  | \_-> 
