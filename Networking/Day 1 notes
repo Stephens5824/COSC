@@ -1,5 +1,6 @@
 Useful Links :
 https://miro.com/app/board/o9J_klSqCSY=/ <><> All the notes i probably wont take
+https://duckduckgo.com
                                                                     (*-*) <[ yay... ]
                          #### NOTES START HERE ####                  /|\
                                                                      / \
@@ -23,21 +24,54 @@ https://net.cybbh.io/-/public/-/jobs/851376/artifacts/modules/networking/slides/
 \_-> Transport Layer starts on slide 7  
 \_-> Session Layer starts on slide 8
 | \_-> Protocols are SOCKS, NetBios, PPTP/L2TP, RPC
-|   \_-> SOCKS (TCP 1080) on .3            _                
-|   \_-> PPTP (TCP 1723) + chart on .4    | <D               
-|   \_-> L2TP (TCP 1701) + chart on .5    U U                  
+|   \_-> SOCKS (TCP 1080) on .3
+|   \_-> PPTP (TCP 1723) + chart on .4
+|   \_-> L2TP (TCP 1701) + chart on .5
 |   \_-> SMB/CIFS (TCP 139/445 & UDP 137/138) on .6           
 |   \_-> RPC (ANY PORT) on .7
-\_-> Presentation Layer starts on slide 9     ()()
-\_-> Application Layer starts on slide 10     (**)  
-  \_-> FTP (TCP 20/21)                       o( O )
-  | \_-> Has 2 modes : Active (default) and Passive
-  |   \_-> Active                    
-  |   | \_-> Issues : Complications w/tunneling, NAT & Firewall traversal issues
-  |   | \_-> Chart displaying the connection on .3
-  |   \_-> Passive
-  |     \_-> Solves issues related to active mode & is often used in modern systems
-  |     \_-> Chart displaying connection on .5
-  \_-> SSH (TCP 22)
-  | \_-> Provides User & Client/server authentication, Data stream channeling
-  | \_-> 
+\_-> Presentation Layer starts on slide 9     () ()
+\_-> Application Layer starts on slide 10     (*-*)  
+| \_-> FTP (TCP 20/21)                       <(  < )o
+| | \_-> Has 2 modes : Active (default) and Passive
+| |   \_-> Active                    
+| |   | \_-> Issues : Complications w/tunneling, NAT & Firewall traversal issues
+| |   | \_-> Chart displaying the connection on .3
+| |   \_-> Passive
+| |     \_-> Solves issues related to active mode & is often used in modern systems
+| |     \_-> Chart displaying connection on .5
+| \_-> SSH (TCP 22)
+| | \_-> Provides User & Client/server authentication, Data stream channeling
+| | \_-> Architecture
+| |   \_-> Server, Client, Session
+| |   \_-> Keys
+| |   | \_-> User Key : Asymmetric, public, identifies user2server
+| |   | \_-> Host Key : Asymmetric, public, identifies server2user
+| |   | \_-> Session Key : Symmetric, made by client & server to protect communications
+| |   \_-> Known-Hosts Database : collection of host keys used for mutual authenication
+| |   \_-> Agent : Stores keys for users
+| |   \_-> Signer : Signs host-based authenication packets
+| |   \_-> Random Seed : used for entropy in creating pseudo-random numbers
+| |   \_-> Configuration File : exists on the client & server to dicate ssh & sshd respectively
+| \_-> Telnet (TCP 23)
+| \_-> SMTP (TCP 25) 
+| \_-> TACACS (TCP 49) Simple/Extended
+| \_-> HTTP(S) (TCP 80/443)
+| | \_-> Methods : GET | HEAD | POST | PUT
+| | \_-> Status Codes : 100, 200, 300, 400
+| \_-> POP (TCP 110)
+| \_-> IMAP (TCP 143)
+| \_-> RDP (TCP 3389)
+| \_-> DNS (TCP/UDP 53)
+| \_-> DHCP (UDP 67/68)
+| \_-> TFTP (UDP 69)
+| \_-> NTP (UDP 123)
+| \_-> SNMP (UDP 161/162)
+| | \_-> Message Types : GetRequest, SetRequest, GetNext, GetBulk, Response, Trap, Inform
+| \_-> RADIUS (UDP 1645/1646 & 1812/1813)
+| \_-> RTP (UDP gt 1023)
+\_-> Layer 2 Switching Technologies
+| \_-> **** Need to add notes here ****
+\_-> Layer 3 Routing Technologies
+  \_-> Routing, and Routing Tables
+  \_->
+
