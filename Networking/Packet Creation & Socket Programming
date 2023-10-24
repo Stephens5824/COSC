@@ -1,0 +1,13 @@
+Relevent Links : https://net.cybbh.io/-/public/-/jobs/851853/artifacts/modules/networking/slides/2-Packet_Creation_and_Socket_Programming.html
+Notes:
+Socket Types :
+<> Stream Sockets : Connection oriented & sequenced; tcp, sctp, bluetooth; User space
+<> Datagram Sockets : Connectionless; udp; User Space
+<> Raw Sockets : Direct sending & recieving w/o automatic protocol specific formatting; Kernel Space
+
+Network Programming w/Python3:
+<> import socket
+<><> s = socket.socket(socket.FAMILY, socket.TYPE, socket.PROTOCOL)
+<><> family should be : AF_INET or AF_INET6 or AF_UNIX
+<><> type should be : SOCK_STREAM or SOCK_DGRAM or SOCK_RAW
+<><> proto should be : 0 or IPPROTO_RAW
