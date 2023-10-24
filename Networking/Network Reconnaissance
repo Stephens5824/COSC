@@ -1,0 +1,11 @@
+hostname
+whoami
+w
+pwd
+sudo -l
+cat /etc/services /etc/hosts
+ps -elf
+netstat -ntlpu
+ip addr
+arp / ip n
+ip route
