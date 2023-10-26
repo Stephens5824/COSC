@@ -1,0 +1,4 @@
+scp <options><source><destination>
+scp ... -3
+scp file.txt <user>@<ip>:files-dir/
+mkfifo <name of pipe>
