@@ -2,3 +2,18 @@ scp <options><source><destination>
 scp ... -3
 scp file.txt <user>@<ip>:files-dir/
 mkfifo <name of pipe>
+
+ports im allowed 51700-51799
+IH > ssh user1@Bob -L 51700:127.0.0.1:80 -NT
+Bob > ssh student@IH -R 51799:127.0.0.1:80 -NT
+IH > wget -r 127.0.0.1:51700 or 51799
+
+IH > ssh user1@Bob -p 25 -D 9050 -NT
+
+IH > proxychains <nmap -Pn> Jerry,Thomas
+IH > proxychains wget -r ftp://Jerry
+IH > proxychains wget -r http://Jerry
+IH > proxychains wget -r ftp://Thomas
+IH > proxychains wget -r http://Thomas
+IH > proxychains telnet Jerry
+Jerry > ssh user1@Bob -p 25 -R 51798:127.0.0.1:22 -NT
