@@ -1,0 +1,44 @@
+sudo apt-get install nftables
+sudo nft list tables
+sudo nft add table ip BH1
+sudo nft list tables
+sudo nft flush table ip BH1
+sudo nft delete table ip filter
+sudo nft list tables
+sudo nft add chain ip BH1 input { type filter hook input priority 0\; policy accept\; }
+sudo nft list ruleset
+sudo nft add chain ip BH1 output { type filter hook output priority 0\; policy accept\; }
+sudo nft list table ip BH1
+sudo nft insert rule ip BH1 input tcp dport 22 accept
+sudo nft insert rule ip BH1 input tcp sport 22 accept
+sudo nft insert rule ip BH1 output tcp dport 22 accept
+sudo nft insert rule ip BH1 output tcp sport 22 accept
+sudo nft list table ip BH1
+sudo nft add rule ip BH1 input tcp dport { 6010,6011,6012 } ct state { new, established } accept
+sudo nft add rule ip BH1 input tcp sport { 6010,6011,6012 } ct state { new, established } accept
+sudo nft add rule ip BH1 output tcp dport { 6010,6011,6012 } ct state { new, established } accept
+sudo nft add rule ip BH1 output tcp sport { 6010,6011,6012 } ct state { new, established } accept
+sudo nft list table ip BH1
+sudo nft add chain ip BH1 input { type filter hook input priority 0\; policy drop\; }
+sudo nft add chain ip BH1 output { type filter hook output priority 0\; policy drop\; }
+sudo nft add rule ip BH1 input ip saddr 172.16.82.112 drop
+sudo nft add rule ip BH1 output ip daddr 172.16.82.112 drop
+sudo nft list table ip BH1
+sudo nft insert rule ip BH1 input ip saddr 10.10.0.40 accept
+sudo nft insert rule ip BH1 output ip daddr 10.10.0.40 accept
+sudo nft list table ip Bh1 -ann
+sudo nft add rule ip BH1 input position 21 ip saddr 172.16.82.112 drop
+sudo nft add rule ip BH1 output position 21 ip daddr 172.16.82.112 drop
+sudo nft delete rule ip BH1 input handle 19
+sudo nft delete rule ip BH1 output handle 20
+sudo nft add rule ip BH1 input ct state invalid drop
+sudo nft add rule ip BH1 input ip frag-off != 0 drop
+sudo nft add rule ip BH1 input tcp flag syn limit rate 10/second accept
+sudo nft list table ip BH1 -ann
+sudo nft list ruleset > nftable.rules
+ls nftable.rules | cat
+sudo nft add chain ip BH1 input { type filter hook input priority 0\; policy accept\; }
+sudo nft add chain ip BH1 output { type filter hook output priority 0\; policy accept\; }
+sudo nft list table ip BH1
+sudo nft flush table ip BH1
+sudo nft -f nftable.rules
