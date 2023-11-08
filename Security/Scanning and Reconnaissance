@@ -1,0 +1,24 @@
+Data to collect :
+  Web Data < Cached Content, Analytics, Proxy Web Application, command line interrogation
+  Sensitive Data < Business data, profiles, non-profits/charities, business filings, historical and public listing
+  Publicly Accessible < Physical addresses, phone numbers, email addresses, user names, search engine data, web and traffic cameras, wireless access point data
+  Social Media 
+  Domain and IP Data < dns registration, ip address assignments, geolocation data, whois
+
+HTML :
+http://10.50.
+
+<> pip install lxml requests <>
+#!/usr/bin/python
+import lxml.html
+import requests
+page = requests.get('http://quotes.toscrape.com/')
+tree = lxml.html.fromstring(page.content)
+authors = tree.xpath('//small[@class="text"]/text()')
+print ('Authors: ',authors)
+
+Scanning Steps :
+1. Host Discovery
+2. Port Enumeration
+3. Port Interrogation
+\_ Find what service is running on each open/available port
