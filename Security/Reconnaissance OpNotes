@@ -1,4 +1,4 @@
-<> Known Information before starting <>
+    <> Known Information before starting <>
 Network: 192.168.28.96/27
 Network: 192.168.150.224/27
 OSs: unknown
@@ -8,3 +8,18 @@ Known URL: consulting.site.donovia
 Known URL: conference.site.donovia
 -------------------------------------------------
 My Jump Box <> 10.50.45.105 <> 3m3vPCqdVfpPE2I
+-------------------------------------------------
+    <> Start Activity <>
+<> Check Pictures for output of ruby ping sweeps
+<> "ip n" listed on diagram
+<> Syntax used for every nmap : "nmap x.x.x.x -Pn -v -T4"
+<> Ran proxychains wget -r ftp://192.168.28.105
+<> ssh student@10.50.45.105 -L 51700:192.168.28.111:80
+<> -> found Donovian National Consulting site
+<> ssh student@10.50.45.105 -L 51701:192.168.28.100:80
+<> -> found Donovian Government site
+<> first : LFsYC
+<> second : 1XaBe
+<> third : KMiBH
+<> fourth : WhtSB
+<> full flag : LFsYC1XaBeKMiBHWhtSB
