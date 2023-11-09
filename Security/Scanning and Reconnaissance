@@ -22,6 +22,7 @@ Scanning Steps :
 2. Port Enumeration
 3. Port Interrogation
 \_ Find what service is running on each open/available port
+4. Robots.txt
 
 ssh -MS /tmp/gray student@10.50.x.x
 ssh -S /tmp/gray dummy -O Forward -L 2222:192.168.x.x:22 -L 2223:192.168.x.x:80 -L 2224:192.168.x.x:3389
