@@ -12,7 +12,7 @@ My Jump Box <> 10.50.45.105 <> 3m3vPCqdVfpPE2I
     <> Start Activity <>
 <> Check Pictures for output of ruby ping sweeps
 <> "ip n" listed on diagram
-<> Syntax used for every nmap : "nmap x.x.x.x -Pn -v -T4"
+<> Syntax used for every nmap : "nmap x.x.x.x -Pn -v -T4 -p- 2>/dev/null"
 <> Ran proxychains wget -r ftp://192.168.28.105
 <> ssh student@10.50.45.105 -L 51700:192.168.28.111:80
 <> -> found Donovian National Consulting site
