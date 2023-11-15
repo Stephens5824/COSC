@@ -1,0 +1,6 @@
+Started Entry.exe
+A cmd prompt opened displaying "Enter key: " thats waiting for user input
+After giving input it displayed "Invalid key." and shortly exited afterwards
+Opened Ghidra and followed process to find the disired endstate
+found the correct key: "123@magicKey"
+Opened the .exe again and put in the new key and it displayed "Success." and exitted afterwards
