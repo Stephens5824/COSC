@@ -20,3 +20,6 @@ Opened Ghidra and followed process to find the disired endstate
 patched the assembly by changing JNZ to JG
 Opened the .exe again and whatever and it displayed "Success." and exitted afterwards
 ------------------------------------------------------------------------------------------------
+Starting patching.exe
+A cmd prompt opened displaying "Press enter key: " thats waiting for user input
+After giving input it displayed "Invalid key." and shortly exited afterwards
