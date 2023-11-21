@@ -1,0 +1,17 @@
+  <> Escalation <>
+>> Sudo -l, find perm -> SUID/SGID bit 
+>> GTFObins
+>> Insecure Permissions
+>>>> Cron
+>>>> World-Writable Files and Directories (/tmp, /var/tmp)
+>>>> Dot '.' in PATH
+>> Vulnerable Software & Services
+>> Unpatched Kernel Vulnerablities
+--------------------------------------------------
+  <> Persistance <>
+>> Adding/Hijacking User Accounts
+>> Cron Jobs
+>> Kernel
+--------------------------------------------------
+  <> Covering Tracks <>
+>> 
