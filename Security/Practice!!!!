@@ -1,0 +1,8 @@
+Exploit Development for linux
+Exploit Research : google
+Linux Exploitation : gtfobins, 
+Post Exploitation : check usual spots and home directories, run keys, services, schtasks
+Recon : fully read everything + context clues
+SQL Injection : be good
+Web Exploitation : ssh keygen, code injection, directory transversal
+Windows Exploitation : services, dll hijacking
